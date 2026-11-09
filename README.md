@@ -1,122 +1,133 @@
-# 💻 Estudos e Desenvolvimento em Linguagem C
+# Algoritmos e Pensamento Computacional
 
 <p align="center">
-  <img src="https://img.shields.io/badge/Language-C-00599C?style=for-the-badge&logo=c&logoColor=white" />
-  <img src="https://img.shields.io/badge/Status-Em%20Desenvolvimento-success?style=for-the-badge" />
-  <img src="https://img.shields.io/badge/Focus-Programming-orange?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/Linguagem-C-00599C?style=for-the-badge&logo=c&logoColor=white" alt="Linguagem C">
+  <img src="https://img.shields.io/badge/Disciplina-Algoritmos%20e%20Pensamento%20Computacional-blue?style=for-the-badge" alt="Disciplina">
+  <img src="https://img.shields.io/badge/Status-Acadêmico-success?style=for-the-badge" alt="Projeto acadêmico">
 </p>
 
-## 📌 Sobre o Projeto
+## Sobre o repositório
 
-Este repositório foi criado com o objetivo de documentar meus estudos, práticas e projetos desenvolvidos utilizando a linguagem de programação **C**.
+Este repositório reúne as atividades práticas, exercícios e projetos desenvolvidos durante a disciplina **Algoritmos e Pensamento Computacional**, utilizando a linguagem C.
 
-Aqui estão reunidos exercícios, desafios e aplicações desenvolvidas para fortalecer minha lógica de programação, aprimorar minha capacidade de resolução de problemas e desenvolver uma base sólida em programação.
+O objetivo é registrar a evolução do aprendizado em lógica de programação, construção de algoritmos, resolução de problemas e aplicação dos principais recursos da linguagem C.
 
-O projeto acompanha minha evolução como desenvolvedor, desde os conceitos fundamentais até implementações mais elaboradas.
+## Identificação acadêmica
 
-## 🚀 Tecnologias e Ferramentas
+| Informação | Dados |
+|---|---|
+| **Aluno** | Bruno Custodio Fratin |
+| **Disciplina** | Algoritmos e Pensamento Computacional |
+| **Semestre** | [Informar semestre/ano] |
+| **Professor(a)** | [Informar nome do(a) professor(a)] |
+| **Linguagem** | C |
 
-- **Linguagem:** C
-- **Compilador:** GCC
-- **Editor de código:** Visual Studio Code
-- **Controle de versão:** Git e GitHub
+> Antes da entrega, substitua os dois campos entre colchetes pelas informações corretas da sua turma.
 
-## 📚 Conteúdos Estudados
+## Sumário das atividades
 
-Os principais conceitos abordados neste repositório incluem:
+Acesse cada pasta para consultar os códigos-fonte e a documentação correspondente.
 
-- Variáveis e tipos de dados;
-- Operadores aritméticos e lógicos;
-- Estruturas condicionais (`if`, `else` e `switch`);
-- Estruturas de repetição (`for`, `while` e `do while`);
-- Entrada e saída de dados (`scanf` e `printf`);
-- Vetores e matrizes;
-- Funções e modularização;
-- Manipulação de strings;
-- Ponteiros;
-- Estruturas (`struct`);
-- Organização e desenvolvimento de algoritmos.
+| Aula | Conteúdo / atividade | Acesso |
+|---|---|---|
+| Aula 02 | Primeiros programas, entrada e saída de dados | [Acessar Aula 02](./AULA%2002/) · [README](./AULA%2002/README.md) |
+| Aula 03 | Variáveis, operadores e cálculos | [Acessar Aula 03](./AULA%2003/) · [README](./AULA%2003/README.md) |
+| Aula 04 | Estruturas condicionais e validações | [Acessar Aula 04](./AULA%2004/) · [README](./AULA%2004/README.md) |
+| Aula 05 | Projeto integrador Arena Tech | [Acessar Aula 05](./AULA%2005/) · [README](./AULA%2005/README.md) |
+| Aula 06 | Estruturas de repetição | [Acessar Aula 06](./AULA%2006/) · [README](./AULA%2006/README.md) |
+| Aula 07 | Exercícios de lógica e processamento de dados | [Acessar Aula 07](./AULA%2007/) · [README](./AULA%2007/README.md) |
+| Aula 08 | Vetores e matrizes | [Acessar Aula 08](./AULA%2008/) · [README](./AULA%2008/README.md) |
+| Aula 09 | Manipulação de arquivos | [Acessar Aula 09](./AULA%2009/) · [README](./AULA%2009/README.md) |
+| Aula 10 | Funções, ponteiros e estruturas | [Acessar Aula 10](./AULA%2010/) · [README](./AULA%2010/README.md) |
+| Aula 10.1 | Projeto de análise de consumo dos laboratórios | [Acessar Aula 10.1](./AULA%2010.1/) · [README](./AULA%2010.1/README.md) |
 
-## 📂 Organização do Repositório
+## Organização das pastas
+
+Cada diretório representa uma aula. Os arquivos com extensão `.c` contêm os códigos-fonte dos exercícios e projetos. Os arquivos `README.md` apresentam o objetivo da atividade, os conceitos praticados e as instruções de compilação e execução.
 
 ```text
-Linguagem-C/
-│
-├── Exercicios/
-│   ├── condicionais/
-│   ├── repeticao/
-│   ├── vetores/
-│   ├── matrizes/
-│   └── funcoes/
-│
-├── Projetos/
-│
+Algoritmo-PC/
+├── AULA 02/
+├── AULA 03/
+├── AULA 04/
+├── AULA 05/
+├── AULA 06/
+├── AULA 07/
+├── AULA 08/
+├── AULA 09/
+├── AULA 10/
+├── AULA 10.1/
 └── README.md
 ```
 
-*Observação: a estrutura poderá ser atualizada conforme novos exercícios e projetos forem adicionados.*
+## Tecnologias e ferramentas
 
-## 🎯 Objetivos
+- **Linguagem:** C
+- **Compilador:** GCC
+- **Editor recomendado:** Visual Studio Code
+- **Versionamento:** Git e GitHub
+
+## Como compilar e executar
+
+É necessário ter um compilador C instalado, como o GCC.
+
+1. Clone o repositório:
+
+   ```bash
+   git clone https://github.com/bcustodiofratin-debug/Algoritmo-PC.git
+   ```
+
+2. Entre na pasta do repositório:
+
+   ```bash
+   cd Algoritmo-PC
+   ```
+
+3. Compile o arquivo desejado, informando o caminho da aula. Exemplo:
+
+   ```bash
+   gcc "AULA 03/exercicio_01_total_produtos_diario.c" -o programa
+   ```
+
+4. Execute o programa:
+
+   **Windows (Prompt de Comando):**
+   ```cmd
+   programa.exe
+   ```
+
+   **Linux/macOS:**
+   ```bash
+   ./programa
+   ```
+
+> Cada arquivo `.c` possui seu próprio programa. Compile um arquivo por vez. Em atividades que utilizam arquivos de texto, execute o programa no diretório indicado na documentação da aula para que os arquivos de entrada e saída sejam encontrados corretamente.
+
+## Boas práticas adotadas
+
+- Separação das atividades por aula.
+- Nomes de arquivos que procuram indicar o conteúdo do exercício.
+- Documentação em Markdown para explicar os objetivos e a execução.
+- Histórico de alterações registrado por commits.
+- Uso de comentários no código quando ajudam a explicar a lógica.
+
+## Objetivos de aprendizagem
 
 - Desenvolver o raciocínio lógico e computacional.
-- Compreender os fundamentos da linguagem C.
-- Praticar a construção de algoritmos.
-- Aprimorar a resolução de problemas.
-- Desenvolver códigos organizados e eficientes.
-- Construir uma base sólida para aprender novas tecnologias.
+- Compreender a estrutura de um algoritmo.
+- Aplicar variáveis, operadores e estruturas de controle.
+- Trabalhar com vetores, matrizes, funções, ponteiros e estruturas.
+- Manipular arquivos e organizar dados.
+- Praticar a identificação e correção de erros.
 
-## ⚙️ Como executar os códigos
-
-Para executar os programas deste repositório, é necessário possuir um compilador C, como o GCC.
-
-**1. Clone o repositório:**
-
-```bash
-git clone https://github.com/SEU-USUARIO/Linguagem-C.git
-```
-
-**2. Acesse a pasta:**
-
-```bash
-cd Linguagem-C
-```
-
-**3. Compile o arquivo:**
-
-```bash
-gcc programa.c -o programa
-```
-
-**4. Execute o programa:**
-
-No Windows:
-
-```bash
-programa.exe
-```
-
-No Linux:
-
-```bash
-./programa
-```
-
-## 📈 Evolução e Aprendizado
-
-Este repositório está em constante desenvolvimento e representa minha jornada de aprendizado na programação.
-
-Cada exercício e projeto representa uma oportunidade de aprender novos conceitos, corrigir erros e aprimorar minhas habilidades técnicas.
-
-## 👨‍💻 Autor
+## Autor
 
 **Bruno Custodio Fratin**
 
-Estudante de tecnologia e desenvolvimento de software, interessado em programação, resolução de problemas e aprendizado contínuo.
-
-📌 GitHub: [Meu perfil](https://github.com/bcustodiofratin-debug)
+GitHub: [@bcustodiofratin-debug](https://github.com/bcustodiofratin-debug)
 
 ---
 
 <p align="center">
-  <strong>Construindo conhecimento, uma linha de código por vez.</strong>
+  Desenvolvido para fins acadêmicos como registro da aprendizagem em programação.
 </p>
