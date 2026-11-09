@@ -1,24 +1,17 @@
 #include <stdio.h>
-#include <math.h>
 #include <locale.h>
 
 int main(void)
 {
     setlocale(LC_CTYPE, "");
 
-    // Entradas
     int qte_participantes, qte_jogadores_por_time, qte_computadores;
+    int qte_times, computadores_faltantes;
     float potencia, duracao, preco_kwh;
     float preco_kit, outros_custos, orcamento;
-
-    // Processamento
-    int qte_times, computadores_faltantes;
     float consumo_energia, custo_energia;
     float custo_alimentacao, custo_total;
     float custo_por_participante, saldo;
-
-    // Entrada de dados
-    // Solicite ao usuario todos os dados do evento.
 
     printf("Qual será a quantidade total de participantes? ");
     scanf("%d", &qte_participantes);
@@ -29,13 +22,13 @@ int main(void)
     printf("Qual a quantidade de computadores disponíveis? ");
     scanf("%d", &qte_computadores);
 
-    printf("Qual é a potência média de cada computador(watts)? ");
+    printf("Qual é a potência média de cada computador (watts)? ");
     scanf("%f", &potencia);
 
-    printf("Qual será a duração do evento(horas)? ");
+    printf("Qual será a duração do evento (horas)? ");
     scanf("%f", &duracao);
 
-    printf("Qual será o preço de 1kWh de energia? ");
+    printf("Qual será o preço de 1 kWh de energia? ");
     scanf("%f", &preco_kwh);
 
     printf("Qual será o preço de um kit de alimentação por participante? ");
@@ -47,8 +40,15 @@ int main(void)
     printf("Qual é o orçamento máximo disponível para o evento? ");
     scanf("%f", &orcamento);
 
-    // Cálculos fundamentais para análise de viabilidade do evento. O consumo de energia é convertido para kWh dividindo por 1000
-    qte_times = qte_participantes / qte_jogadores_por_time;
+    // Valida os dados necessários para os cálculos.
+    if (qte_participantes <= 0 || qte_jogadores_por_time <= 0 ||
+        qte_computadores < 0 || potencia < 0 || duracao < 0 ||
+        preco_kwh < 0 || preco_kit < 0 || outros_custos < 0 || orcamento < 0) {
+        printf("\nErro: informe quantidades e valores válidos (não negativos).\n");
+        return 1;
+    }
+
+    qte_times = (qte_participantes + qte_jogadores_por_time - 1) / qte_jogadores_por_time;
     consumo_energia = (qte_computadores * potencia * duracao) / 1000;
     custo_energia = consumo_energia * preco_kwh;
     custo_alimentacao = qte_participantes * preco_kit;
@@ -56,60 +56,53 @@ int main(void)
     custo_por_participante = custo_total / qte_participantes;
     saldo = orcamento - custo_total;
 
-    // Relatório geral
-
     printf("\n============== ARENA TECH ==============\n");
-    printf("\nParticipantes: %.2d", qte_participantes);
-    printf("\nTimes necessários: %.2d", qte_times);
-    printf("\nComputadores disponíveis: %.2d", qte_computadores);
+    printf("Participantes: %d\n", qte_participantes);
+    printf("Times necessários: %d\n", qte_times);
+    printf("Computadores disponíveis: %d\n", qte_computadores);
 
-    // Análise de infraestrutura: verifica se o número de equipamentos atende à demanda de participantes; caso negativo, calcula a diferença (computadores_faltantes)
     if (qte_computadores >= qte_participantes) {
-        printf("\nInfraestrutura: SUFICIENTE!\n");
+        printf("Infraestrutura: SUFICIENTE!\n");
     } else {
-        computadores_faltantes = qte_participantes-qte_computadores;
-        printf("\nInfraestrutura: INSUFICIENTE!\nQuantidade faltante: %.2d\n", computadores_faltantes);
+        computadores_faltantes = qte_participantes - qte_computadores;
+        printf("Infraestrutura: INSUFICIENTE!\n");
+        printf("Quantidade de computadores faltantes: %d\n", computadores_faltantes);
     }
 
-    printf("\nConsumo estimado: %.2f kWh", consumo_energia);
+    printf("Consumo estimado: %.2f kWh\n", consumo_energia);
 
-    // Sistema de classificação de consumo energético em três níveis: Baixo (<= 20), Moderado (entre 20 e 40) e Alto (> 40)
     if (consumo_energia <= 20) {
-        printf("\Classificação do consumo: BAIXO\n");
-    } else if (consumo_energia > 20 && consumo_energia < 40){
-        printf("\nClassificação do consumo: MODERADO\n");
+        printf("Classificação do consumo: BAIXO\n");
+    } else if (consumo_energia < 40) {
+        printf("Classificação do consumo: MODERADO\n");
     } else {
-        printf("\nClassificação do consumo: ALTO");
+        printf("Classificação do consumo: ALTO\n");
     }
 
-    printf("\nCusto da energia: R$%.2f", custo_energia);
-    printf("\nCusto da alimentação: R$%.2f", custo_alimentacao);
-    printf("\nOutros custos: R$%.2f", outros_custos);
-    printf("\nCUSTO TOTAL: R$%.2f", custo_total);
-    printf("\nCUSTO POR PARTICIPANTE: R$%.2f", custo_por_participante);
+    printf("Custo da energia: R$ %.2f\n", custo_energia);
+    printf("Custo da alimentação: R$ %.2f\n", custo_alimentacao);
+    printf("Outros custos: R$ %.2f\n", outros_custos);
+    printf("CUSTO TOTAL: R$ %.2f\n", custo_total);
+    printf("CUSTO POR PARTICIPANTE: R$ %.2f\n", custo_por_participante);
+    printf("\nOrçamento disponível: R$ %.2f\n", orcamento);
+    printf("Saldo: R$ %.2f\n", saldo);
 
-    printf("\n\nOrçamento disponível: R$%.2f", orcamento);
-    printf("\nSaldo: R$%.2f", saldo);
-
-    // Validação orçamentária que emite alertas críticos se os gastos ultrapassarem o teto financeiro ou se a margem de manobra for apertada (saldo <= 5% do orçamento)
     if (custo_total > orcamento) {
-        printf("\nSituação do orçamento: ACIMA DO ORCAMENTO\n");
-    } else if (custo_total <= orcamento && saldo <= orcamento*0.05) {
-        printf("\nSituação do orçamento: NO LIMITE DO ORÇAMENTO\n");
+        printf("Situação do orçamento: ACIMA DO ORÇAMENTO\n");
+    } else if (saldo <= orcamento * 0.05f) {
+        printf("Situação do orçamento: NO LIMITE DO ORÇAMENTO\n");
     } else {
-        printf("\nSituação do orçamento: DENTRO DO ORÇAMENTO\n");
+        printf("Situação do orçamento: DENTRO DO ORÇAMENTO\n");
     }
 
-    // Tomada de decisão final através de múltiplas condições: veta o evento caso haja falta de PCs ou dinheiro, aplica ressalvas se o consumo for excessivo, ou aprova inteiramente se tudo estiver dentro dos parâmetros
     if (qte_participantes > qte_computadores || custo_total > orcamento) {
-        printf("\nDECISÃO FINAL: NÃO RECOMENDADO!");
-    } else if (qte_participantes <= qte_computadores && custo_total <= orcamento && consumo_energia > 40) {
-        printf("\nDECISÃO FINAL: APROVADO COM RESSALVAS!");
+        printf("DECISÃO FINAL: NÃO RECOMENDADO!\n");
+    } else if (consumo_energia > 40) {
+        printf("DECISÃO FINAL: APROVADO COM RESSALVAS!\n");
     } else {
-        printf("\nDECISÃO FINAL: APROVADO!");
+        printf("DECISÃO FINAL: APROVADO!\n");
     }
-    printf("\n=========================================");
 
-
+    printf("=========================================\n");
     return 0;
 }
