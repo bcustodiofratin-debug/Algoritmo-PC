@@ -9,8 +9,8 @@ Registrar os primeiros exercícios de lógica de programação em C, praticando 
 | Arquivo | Descrição |
 |---|---|
 | `ola_mundo.c` | Exibe uma mensagem inicial no terminal. |
+| `Exemplo 01` | Demonstra a declaração de variáveis inteiras e decimais e a formatação da saída. |
 | `EXEMPLO2.c` | Lê dados informados pelo usuário e realiza um cálculo de compra. |
-| `EXEMPLO1.c` | Exemplo de formatação de valores inteiros e decimais. |
 
 ### Exercícios
 | Arquivo | Descrição |
