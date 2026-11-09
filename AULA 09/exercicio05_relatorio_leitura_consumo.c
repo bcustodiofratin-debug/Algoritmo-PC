@@ -1,37 +1,43 @@
-#include<stdio.h>
-#include<locale.h>
+#include <stdio.h>
+#include <locale.h>
 
-int main(){
-
+int main(void)
+{
     setlocale(LC_CTYPE, "");
 
-
-    int contador=0;
+    int contador = 0;
     char dia[4];
-    float consumo, media,soma, maior_consumo =0;
+    float consumo, media, soma = 0.0f, maior_consumo = 0.0f;
     FILE *arquivo = fopen("consumo.txt", "r");
 
-    if(arquivo == NULL){
+    if (arquivo == NULL) {
         printf("ERRO AO ABRIR O ARQUIVO\n");
         return 1;
     }
 
-    // Extrai dados formatados (uma string de até 3 caracteres e um float) do arquivo repetidamente até encontrar o fim (EOF - End Of File)
-    while(fscanf(arquivo,"%3s %f",dia, &consumo) != EOF){
+    // Lê cada registro enquanto houver um dia e um valor de consumo válidos.
+    while (fscanf(arquivo, "%3s %f", dia, &consumo) == 2) {
         soma += consumo;
         contador++;
-        // Condicional que verifica e atualiza o pico de consumo lido até o momento
-        if(consumo >maior_consumo)
-            maior_consumo= consumo;
+
+        if (consumo > maior_consumo) {
+            maior_consumo = consumo;
+        }
     }
-    // Calcula a média dividindo a soma de todos os consumos pela quantidade de registros contados na leitura
-    media = soma/contador;
-    
-    printf("Relatorio\n");
-    printf("quantidade de registros: %d", contador);
-    printf("Consumo médio: %.1f\n",media);
-    printf("Ma iorConsumo: %.1f\n",maior_consumo);
 
     fclose(arquivo);
+
+    if (contador == 0) {
+        printf("O arquivo não possui registros válidos.\n");
+        return 1;
+    }
+
+    media = soma / contador;
+
+    printf("Relatório de consumo\n");
+    printf("Quantidade de registros: %d\n", contador);
+    printf("Consumo médio: %.1f\n", media);
+    printf("Maior consumo: %.1f\n", maior_consumo);
+
     return 0;
 }
