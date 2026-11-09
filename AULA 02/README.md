@@ -1,51 +1,48 @@
-Este repositório contém os exercícios e programas de exemplo desenvolvidos durante as aulas introdutórias de lógica 
-e algoritmos na linguagem C. O objetivo é abordar variáveis, tipos de dados, formatação de saída e entrada de dados via teclado.
+# Aula 02 — Introdução à linguagem C
 
----
+## Objetivo
+Registrar os primeiros exercícios de lógica de programação em C, praticando variáveis, tipos de dados, entrada e saída de informações e operações matemáticas.
 
-🛠️ Conceitos Abordados
+## Arquivos
 
-Biblioteca Padrão ("stdio.h"): Utilizada para manipulação de entradas e saídas de dados no console ("printf", "scanf").
-Suporte a Idioma Local ("locale.h"): Uso de "setlocale(LC_CTYPE, "")" para garantir que acentos e caracteres
-da língua portuguesa sejam renderizados adequadamente no terminal.
+### Exemplos
+| Arquivo | Descrição |
+|---|---|
+| `ola_mundo.c` | Exibe uma mensagem inicial no terminal. |
+| `EXEMPLO2.c` | Lê dados informados pelo usuário e realiza um cálculo de compra. |
+| `EXEMPLO1.c` | Exemplo de formatação de valores inteiros e decimais. |
 
-Tipos de Dados Essenciais:
-   "Int": Armazenamento de números inteiros (ex: RGM, idades, semanas).
-  "float": Armazenamento de números decimais/flutuantes (ex: notas, dimensões, preços).
-  
-  Formatadores de Entrada e Saída:
-  "%d": Marcador para exibição e leitura de inteiros.
-  "%f" / "%.2f": Marcador para exibição e leitura de números decimais (com restrição de casas decimais).
+### Exercícios
+| Arquivo | Descrição |
+|---|---|
+| `EXERCICIO1.c` | Calcula o perímetro de uma circunferência. |
+| `EXERCICIO2.c` | Calcula área e perímetro de um jardim retangular. |
+| `EXERCICIO3.c` | Converte semanas de gestação em uma estimativa de meses. |
+| `EXERCICIO4.c` | Calcula uma recomendação de consumo diário de água com base no peso informado. |
+| `EXERCICIO5.c` | Calcula a média aritmética de duas notas. |
 
----
+## Conceitos praticados
+- Bibliotecas `stdio.h` e `locale.h`.
+- Variáveis e tipos `int` e `float`.
+- Entrada de dados com `scanf`.
+- Saída de dados com `printf`.
+- Especificadores de formato, como `%d` e `%f`.
+- Operações matemáticas básicas.
 
-📂 Arquivos do Repositório
+## Pré-requisitos
+Ter um compilador C instalado, como o GCC, ou utilizar uma IDE com suporte à linguagem C.
 
-'Exemplos Guiados'
+## Como compilar e executar
+Abra o terminal na raiz do repositório. Exemplo:
 
-1. "ola_mundo.c": Exemplo básico demonstrando a declaração de variáveis inteiras e exibição de mensagens simples na tela.
-2. "EXEMPLO1.c": Apresenta a formatação de inteiros e decimais com limite de duas casas decimais, além do uso de acentuação com "locale.h".
-3. "EXEMPLO2.c": Demonstra a interação com o usuário lendo dados via teclado ("scanf") para calcular o custo total da compra de produtos.
+```bash
+gcc "AULA 02/ola_mundo.c" -o ola_mundo
+```
 
-'Exercícios Práticos'
+Windows: `ola_mundo.exe`  
+Linux/macOS: `./ola_mundo`
 
-1. "EXERCICIO1.c": Calcula o perímetro de uma circunferência com base na medida do raio fornecida pelo usuário.
-2. "EXERCICIO2.c": Calcula a área total e o perímetro de um jardim retangular a partir das medidas de largura e comprimento.
-3. "EXERCICIO3.c": Converte semanas de gestação informadas pelo usuário para um tempo estimado em meses.
-4. "EXERCICIO4.c": Calcula a recomendação diária de água necessária (em litros) de acordo com o peso corporal em kg.
-5. "EXERCICIO5.c": Lê duas notas escolares fornecidas pelo usuário e exibe a média aritmética simples final.
+Para executar outro exercício, substitua o caminho do arquivo e o nome do programa gerado. Compile um arquivo por vez.
 
----
-
-🚀 Como Executar os Programas
-
-'Pré-requisitos'
-Ter um compilador C instalado em sua máquina (como o "GCC") ou utilizar uma IDE como "Code::Blocks",
-"Dev-C++",ou o "VS Code" com extensões de C/C++.
-
-"Linha de Comando (GCC)'
-
-1. 'Abra o terminal' na pasta do projeto.
-2. **Compile o arquivo desejado**:
-   ```bash
-   gcc EXEMPLO1.c -o exemplo1
+## Finalidade acadêmica
+Consolidar os fundamentos iniciais da linguagem C e desenvolver a capacidade de transformar problemas simples em programas.
