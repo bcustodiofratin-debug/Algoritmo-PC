@@ -117,6 +117,6 @@ Estudante de tecnologia e desenvolvimento de software, interessado em programaç
 
 ---
 
-<p align="center">
+<p align="https://github.com/bcustodiofratin-debug/Algoritmo-PC">
   <strong>Construindo conhecimento, uma linha de código por vez.</strong>
 </p>
