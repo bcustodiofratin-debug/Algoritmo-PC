@@ -113,7 +113,7 @@ Cada exercício e projeto representa uma oportunidade de aprender novos conceito
 
 Estudante de tecnologia e desenvolvimento de software, interessado em programação, resolução de problemas e aprendizado contínuo.
 
-📌 GitHub: [Meu perfil](https://github.com/bcustodiofratin-debug/Algoritmo-P))
+📌 GitHub: [Meu perfil](https://github.com/bcustodiofratin-debug)
 
 ---
 
