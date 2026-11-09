@@ -1,29 +1,39 @@
 #include <stdio.h>
 #include <locale.h>
 
-// Função que utiliza ponteiros (*a e *b) para acessar e modificar os valores diretamente em seus endereços de memória originais
-void trocar(int *a, int *b) {
-    int auxiliar;
-    
-    // A variável temporária 'auxiliar' guarda o valor de 'a' para que ele não se perca ao ser sobrescrito por 'b'
-    auxiliar = *a;
+// Troca os valores armazenados nos endereços recebidos.
+void trocar(int *a, int *b)
+{
+    int auxiliar = *a;
     *a = *b;
     *b = auxiliar;
 }
 
-int main () {
+int main(void)
+{
+    setlocale(LC_CTYPE, "");
 
-    int *a, *b;
+    // Variáveis inteiras que serão modificadas pela função trocar.
+    int a, b;
+
     printf("Digite o valor de a: ");
-    scanf("%d", &a);
+    if (scanf("%d", &a) != 1) {
+        printf("Valor inválido.\n");
+        return 1;
+    }
+
     printf("Digite o valor de b: ");
-    scanf("%d", &b);
+    if (scanf("%d", &b) != 1) {
+        printf("Valor inválido.\n");
+        return 1;
+    }
 
     printf("Antes: a=%d b=%d\n", a, b);
-    
-    // Passa o endereço de memória das variáveis (utilizando &) para a função poder operá-las
+
+    // Envia os endereços das variáveis para a função.
     trocar(&a, &b);
-    printf("Depois: a=%d b=%d\n",a, b);
+
+    printf("Depois: a=%d b=%d\n", a, b);
 
     return 0;
 }
