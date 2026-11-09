@@ -113,10 +113,10 @@ Cada exercício e projeto representa uma oportunidade de aprender novos conceito
 
 Estudante de tecnologia e desenvolvimento de software, interessado em programação, resolução de problemas e aprendizado contínuo.
 
-📌 GitHub: [Meu perfil](https://github.com/SEU-USUARIO)
+📌 GitHub: [Meu perfil](https://github.com/bcustodiofratin-debug/Algoritmo-P))
 
 ---
 
-<p align="https://github.com/bcustodiofratin-debug/Algoritmo-PC">
+<p align="center">
   <strong>Construindo conhecimento, uma linha de código por vez.</strong>
 </p>
