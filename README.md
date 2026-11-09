@@ -1,146 +1,45 @@
-# 🚀 Portfólio de Lógica de Programação e Estruturas de Dados em C
+# 📂 Aula 09 - Manipulação de Arquivos em C 
 
-[![Linguagem C](https://img.shields.io/badge/Linguagem-C-blue.svg)](https://en.wikipedia.org/wiki/C_(programming_language))
-[![Status](https://img.shields.io/badge/Status-Em%20Desenvolvimento-green.svg)](#)
-[![Licença](https://img.shields.io/badge/Licen%C3%A7a-MIT-brightgreen.svg)](#licença)
-
-Bem-vindo(a) ao meu repositório de estudos e práticas em **Lógica de Programação e Estruturas de Dados em C**. Este espaço reúne uma coleção progressiva de exercícios, algoritmos e projetos práticos desenvolvidos para consolidar fundamentos de desenvolvimento de software, raciocínio analítico e resolução de problemas.
-
-Os conteúdos variam desde operações básicas de entrada e saída até a manipulação de matrizes multidimensionais e o desenvolvimento de programas orientados a regras de negócio reais.
+Bem-vindo ao repositório da **Aula 09**! Este material é dedicado ao estudo de persistência de dados utilizando a linguagem C. Aqui, você encontrará exemplos práticos de como os programas podem interagir com o sistema operacional para criar, ler, editar e processar arquivos de texto de forma definitiva.
 
 ---
 
-## 🎯 Objetivos do Repositório
+## 🎯 Visão Geral
 
-- **Consolidação de Lógica:** Construção de algoritmos estruturados a partir de problemas descritos em linguagem natural.
-- **Domínio das Estruturas Fundamentais:** Aplicação prática de variáveis, tipos de dados, condicionais, laços de repetição, vetores e matrizes.
-- **Tratamento de Dados e Internacionalização:** Leitura e exibição formatada de dados com suporte a caracteres locais via `locale.h`.
-- **Projetos Aplicados:** Simulação de cenários do mundo real (como planejamento financeiro e logístico) traduzidos em software CLI (Interface de Linha de Comando).
-
----
-
-## 🛠️ Tecnologias e Ferramentas
-
-| Categoria | Tecnologia / Recurso |
-| :--- | :--- |
-| **Linguagem** | C (ANSI C / C99) |
-| **Bibliotecas Padrão** | `<stdio.h>`, `<stdlib.h>`, `<math.h>`, `<locale.h>` |
-| **Compilador Sugerido** | GCC (GNU Compiler Collection) |
-| **Ambiente de Dev** | VS Code, CLion ou Code::Blocks |
-| **Controle de Versão** | Git & GitHub |
+Ao longo destes exercícios, exploramos a biblioteca padrão `<stdio.h>` para manipular ponteiros do tipo `FILE`. Os principais conceitos abordados incluem:
+- **Modos de Abertura:** Escrita (`w`), Leitura (`r`) e Anexação (`a`).
+- **Escrita de Dados:** Como utilizar a função `fprintf` para gravar dados formatados no disco.
+- **Leitura de Dados:** Diferenças práticas entre ler linhas inteiras com `fgets` e extrair dados tipados (strings, inteiros, floats) com `fscanf`.
+- **Tratamento de Arquivos:** Verificação de erros na abertura (ponteiros `NULL`) e a importância de fechar arquivos com `fclose`.
 
 ---
 
-## 📌 Conteúdo e Estrutura de Módulos
+## 📁 Estrutura do Repositório e Arquivos
 
-### 1. 📂 Manipulação de Estruturas Homogêneas (Vetores e Matrizes)
+Abaixo está o detalhamento de cada código-fonte presente neste repositório:
 
-Exercícios focados em iteração, busca, ordenação simples e agregações estatísticas.
+### 1. Escrita e Criação (`w` - Write)
+* **`exemplo1.c`**: Demonstra a criação do arquivo `tabuada.txt` a partir do zero[cite: 9]. O usuário informa um número inteiro, e o programa utiliza um laço de repetição com `fprintf` para calcular e gravar a tabuada (de 0 a 10) diretamente no arquivo de texto. Se o arquivo já existir, ele será reescrito.
 
-| Arquivo / Módulo | Conceito Principal | Descrição |
-| :--- | :--- | :--- |
-| `exercicio01.c` | Vetores / Arrays | Leitura de salários de funcionários e exibição sequencial formatada. |
-| `exercicio02.c` | Vetores e Média | Cálculo de média aritmética e contagem de elementos acima da média. |
-| `exercicio03.c` | Vetores e Busca | Processamento estatístico de salários: média, identificação do valor máximo e seu respectivo índice. |
-| `exercicio04.c` | Matrizes ($3 \times 4$) | Controle de estoque de produtos em múltiplos dias, com consolidação por linha e total geral. |
-| `exercicio05.c` | Matrizes ($3 \times 1$) | Cálculo de média individual de estudantes e determinação do maior desempenho da turma. |
+### 2. Anexação de Dados (`a` - Append)
+* **`exercico2.c`**: Mostra como adicionar dados ao final de um arquivo existente sem apagar seu histórico. Abre (ou cria) o arquivo `consumo.txt` e utiliza um laço para inserir múltiplos registros informados pelo usuário, contendo o dia da semana e o respectivo valor de consumo (ex: `seg 15.5`).
 
----
+### 3. Leitura de Linhas Completas (`r` - Read / `fgets`)
+* **`exercicio3.c`**: Focado na leitura simples de texto. Abre o arquivo `tabuada.txt` criado anteriormente e utiliza a função `fgets` dentro de um laço `while` para ler o documento linha por linha, exibindo o conteúdo no console até atingir o fim do arquivo (`NULL`).
 
-### 2. ⚡ Fundamentos e Estruturas de Controle
-
-Exercícios graduais organizados por tópicos de aprendizado:
-
-- **Operadores e Cálculos Aritméticos:** Fórmulas matemáticas, conversões de unidades, cálculo de IMC, área/perímetro, consumo de energia e geometria plana.
-- **Estruturas Condicionais (`if` / `else` / `switch`):** Validação de regras, cálculo de tarifas, equações do segundo grau (Bhaskara), aprovação escolar e múltiplas condições de decisão.
-- **Estruturas de Repetição (`for` / `while` / `do-while`):** Acumuladores de valores, validação de entradas do usuário, controle de tentativas e geradores de tabuadas.
+### 4. Leitura Formatada e Relatórios (`r` - Read / `fscanf`)
+* **`exercicio5.c`**: Script de processamento de dados. Abre o arquivo `consumo.txt` e utiliza o `fscanf` para separar dinamicamente as strings (dias) dos floats (valores de consumo). O programa varre o documento até o final (`EOF`), acumulando os valores para calcular o **consumo médio**, contabilizar a **quantidade de registros** e identificar o **maior consumo** registrado.
+* **`exercicio7.c`**: Segue uma lógica analítica semelhante, mas voltada para o arquivo `vendas.txt`. Lê identificadores e valores financeiros de forma iterativa (`EOF`) para gerar um relatório final contendo: **total de vendas realizadas**, **soma do faturamento** e o **maior valor** de uma venda única.
 
 ---
 
-### 🌟 Projeto em Destaque: Arena Tech — Calculadora de Custos de Eventos de E-Sports
+## 🛠️ Como Compilar e Executar
 
-Um programa de linha de comando que simula uma análise completa de viabilidade financeira e logística para um campeonato de e-sports.
+Certifique-se de ter um compilador C (como o **GCC**) instalado em sua máquina.
 
-**Principais Funcionalidades:**
-- **Estimativa Logística:** Cálculo da quantidade necessária de equipes e verificação da demanda de computadores por participante.
-- **Consumo Energético:** Estimativa do consumo elétrico em kWh e seu custo financeiro total.
-- **Consolidação Orçamentária:** Soma de despesas com energia, alimentação e custos operacionais adicionais.
-- **Tomada de Decisão:** Cálculo do custo médio por participante, verificação de saldo orçamentário e emissão de recomendações finais automáticas.
+**1. Pelo Terminal (Linux / macOS / Windows com MinGW):**
 
-> **Nota:** Este é um projeto acadêmico focado em modelagem de regras de negócio em C e não substitui um software de gestão financeira corporativa.
-
----
-
-## 💻 Como Compilar e Executar
-
-### Pré-requisitos
-Certifique-se de ter um compilador C (como o `gcc`) instalado no seu sistema.
-
-### Passo a Passo no Terminal
-
-1. **Clonar o repositório:**
-   ```bash
-   git clone https://github.com/seu-usuario/seu-repositorio.git
-   cd seu-repositorio
-   ```
-
-2. **Compilar um arquivo:**
-   
-   *Para exercícios padrão:*
-   ```bash
-   gcc exercicio01.c -o exercicio01
-   ```
-
-   *Para arquivos que utilizam a biblioteca matemática (`math.h`):*
-   ```bash
-   gcc exercicio_math.c -o programa -lm
-   ```
-
-3. **Executar o programa:**
-
-   - **Linux / macOS:**
-     ```bash
-     ./exercicio01
-     ```
-   - **Windows (CMD / PowerShell):**
-     ```cmd
-     .\exercicio01.exe
-     ```
-
----
-
-## 📂 Organização das Pastas Sugerida
-
-```text
-.
-├── 📄 README.md
-├── 📁 01_introdutores/     # Conceitos básicos de I/O e variáveis
-├── 📁 02_operadores/       # Exercícios de cálculos e fórmulas
-├── 📁 03_condicionais/     # Aplicações com if, else e switch
-├── 📁 04_repeticoes/       # Laços for, while e do-while
-├── 📁 05_vetores_matrizes/ # Exercícios 01 a 05 com arrays
-└── 📁 06_projetos/         # Projeto Arena Tech e outros projetos CLI
-```
-
----
-
-## 🚀 Boas Práticas e Evolução Técnica
-
-Para elevar a qualidade do código para padrões de produção, as seguintes práticas estão em constante implementação:
-- [x] **Tratamento de Entradas:** Validação de dados digitados pelo usuário.
-- [x] **Modularização:** Separação de rotinas complexas em funções dedicadas.
-- [x] **Compilação Rigorosa:** Verificação de alertas com as flags `-Wall -Wextra -Wpedantic`.
-- [x] **Documentação:** Comentários explicativos e tabelas claras de dados.
-
----
-
-## 👤 Autor
-
-**Bruno Custodio Fratin**  
-*Desenvolvimento de Software e Tecnologia da Informação*  
-
----
-
-## 📝 Licença
-
-Este repositório está sob a licença [MIT](./LICENSE) — sinta-se à vontade para utilizar, estudar e aprimorar os códigos fornecidos.
+Navegue até a pasta onde os arquivos estão salvos e compile o código desejado:
+```bash
+# Exemplo compilando o exercicio5.c
+gcc exercicio5.c -o relatorio_consumo
